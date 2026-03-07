@@ -3,3 +3,4 @@ uvicorn
 pyyaml
 jsonschema
 databricks-connect
+databricks-sdk

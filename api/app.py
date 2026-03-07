@@ -8,17 +8,20 @@ import yaml
 import jsonschema
 from fastapi import FastAPI, APIRouter, HTTPException
 from fastapi.responses import FileResponse, StreamingResponse
+from databricks.sdk import WorkspaceClient
 from databricks.connect import DatabricksSession
 spark = DatabricksSession.builder.serverless().getOrCreate()
+
 
 app = FastAPI()
 router = APIRouter(prefix="/api")
 
 
 def load_contract(name: str) -> dict:
+    w = WorkspaceClient()
     path = f"/Volumes/3po/main/contracts/{name}.yaml"
-    with open(path, "r") as f:
-        return yaml.safe_load(f)
+    response = w.files.download(path)
+    return yaml.safe_load(response.contents)
 
 
 def validate_records(records: list[dict], contract_name: str):
