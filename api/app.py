@@ -8,6 +8,8 @@ import yaml
 import jsonschema
 from fastapi import FastAPI, APIRouter, HTTPException
 from fastapi.responses import FileResponse, StreamingResponse
+from databricks.connect import DatabricksSession
+spark = DatabricksSession.builder.getOrCreate()
 
 app = FastAPI()
 router = APIRouter(prefix="/api")
