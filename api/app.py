@@ -5,7 +5,7 @@ import zipfile, io
 import yaml
 
 
-app = FastAPI()
+app = FastAPI(root_path="/api")
 
 @app.get("/ingests")
 def ingests(start: int = 0, end: int = None):
