@@ -1,4 +1,4 @@
-"""from fastapi import FastAPI
+from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.responses import StreamingResponse
 import zipfile, io
@@ -98,12 +98,4 @@ def validate_records(records: list[dict], contract_name: str):
         raise HTTPException(
             status_code=502,
             detail={"message": f"Contract '{contract_name}' violations", "errors": errors[:10]},
-        )"""
-
-
-from fastapi import FastAPI
-app = FastAPI()
-
-@app.get("/api/hello")
-def hello():
-    return {"status": "ok"}
+        )
