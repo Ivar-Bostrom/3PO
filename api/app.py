@@ -4,9 +4,17 @@ from fastapi.responses import StreamingResponse
 import zipfile, io
 import yaml
 from fastapi import APIRouter
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+logger.info("✅ app.py loaded successfully")  # add this
 
 app = FastAPI()
 router = APIRouter(prefix="/api")
+
+logger.info("✅ FastAPI app created")  # and this
 
 @app.get("/ingests")
 def ingests(start: int = 0, end: int = None):
