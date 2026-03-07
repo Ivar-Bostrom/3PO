@@ -1,3 +1,4 @@
-command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "${DATABRICKS_APP_PORT}"]
-authorization:
-  require_auth: false
+command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+#command: ["uvicorn", "app:TESTapp", "--host", "0.0.0.0", "--port", "8000"]
+#authorization:
+#  require_auth: false
