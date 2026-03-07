@@ -3,9 +3,10 @@ from fastapi.responses import FileResponse
 from fastapi.responses import StreamingResponse
 import zipfile, io
 import yaml
+from fastapi import APIRouter
 
-
-app = FastAPI(root_path="/api")
+app = FastAPI()
+router = APIRouter(prefix="/api")
 
 @app.get("/ingests")
 def ingests(start: int = 0, end: int = None):
