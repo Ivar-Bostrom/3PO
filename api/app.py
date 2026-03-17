@@ -3,7 +3,6 @@ import io
 import zipfile
 import logging
 import os
-
 import yaml
 import jsonschema
 from fastapi import FastAPI, APIRouter, HTTPException
@@ -112,4 +111,12 @@ def content(platform: str, id: str):
     buffer.seek(0)
     return StreamingResponse(buffer, media_type="application/zip", headers={
         "Content-Disposition": f"attachment; filename={id}.zip"
+
+@app.get("/response/{platform}/{time}")
+def response(platform: str, time: int) -> str:
+    w = WorkspaceClient()
+    path = f"/Volumes/3po/responses/{platform}/{time}.json"
+    with w.files.download(path) as f:
+        return f.contents.read().decode("utf-8")
+
     })
