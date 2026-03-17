@@ -62,7 +62,7 @@ API_Helper: Potentially usefull when setting up the API. First cell provides per
 
 Query: Provides a space to query tables for debugging.
 
-4.2) API
+4.2) API  
 The API is implemented through a Databricks App. To use it, create and deploy an app using the API folder, connect a service principal, and edit and run the API_Helper notebook.
 The API provides an endpoint for each table. These are automatically tested using the contracts. These endpoints are:
 /timeline, /ingests, /timestamp/{platform}/{time}, /history/{platform}/{id}, and /positivity/{platform}.
@@ -71,13 +71,13 @@ It also provides /positivity/{platform}/{id}, which simply returns the positivit
 4.3) Visualizer  
 The visualizer is also a notebook, however, it is meant to run outside of Databricks to visualize data it recieves through API calls. The first cell includes all imports. Note that running it might require installs first. Installs are not included in the notebook. The second cell defines query variables. These can be edited to visualize different sets of data. The third cell generates access to the API. The four first rows define variables that should be eddited to match the app and its service principal. It also requires a secret for the service principal, which may be generated in settings inside Databricks. The fourth cell defines the calls and visualizations. Subsequent cells can be run to call and visualize data.
 
-5) Pipeline
+5) Pipeline  
 First, a call is made to the plattform, which provides information about the most popular post. This is saved as 3po.main.responses.{platform}.{time} For each post in the response, the ID is compared against
 3po.main.{platform}_positivity. If the ID is present in the table, this is an instance of a previously handeled post. If so, only the values needed to calculate impressions are collected from the platform, and the positivity is collected from the file. Rows are then appended to the timestamp and history of the post. If there is no ID match, it is a new post, and the positivity is calculated by using Vader sentiment analysis on the user facing text elements of the post. Also, the contents of the post are downloaded and stored in 3po.c{platform}.{ID}. Appends are then performed as if the post was reoccuring.
 
 Once this is done for each post in the response. The average positivity weighted by impressions is calculated. Posts with no text elements are ignored. When this has been done for all platforms, rows are appended to timeline and ingests. From there, the data is accessible through the API, which also performs automatic testing if the data is a table.
 
-6) Details of task implementation.
+6) Details of task implementation.  
 
 'Description of solution with illustrative elements. Data schema description and pipeline description.'  
 This file is in large part an implementation of this task.
@@ -85,15 +85,15 @@ This file is in large part an implementation of this task.
 'Repository organization & documentation', 'Overall presentation & language', 'Scope & innovativeness, originality'  
 These tasks are impossible not to implement, although the quality of implementation can vary.
 
-'Structured data (batch/manual)', 'Unstructured data (batch/manual)', 'Real-time or automated batch ingestion'
+'Structured data (batch/manual)', 'Unstructured data (batch/manual)', 'Real-time or automated batch ingestion'  
 The responses are structured, if not to the standards of a table. If a platform was to send a table, the system could also handle it. The different files are definitely unstructured.
 Sample() is an example of batch ingestion, and ingest() is thus an example of automated batch ingestion.
 
-'Implement ETL to clean, transform, and standardize data', 'Implement an AI/ML model as part of the data pipeline.'
+'Implement ETL to clean, transform, and standardize data', 'Implement an AI/ML model as part of the data pipeline.'  
 Various variables are reconciled into impressions. AI is implemented in the form os sentiment analysis.
 
-'Apply data deduplication & type validation, basic metadata', 'Advanced/automated metadata (e.g., profiling, schema evolution)', 'Implement medallion architecture (Bronze-Silver-Gold)', 'Data lineage', 'Performance tuning (e.g., partitioning, z-ordering, etc.)'
-Deduplication was implemented primarily by not treating each instance of a post as a new post, which among other things would require new file downloads. Data lineage and partitioning are both implemented by categorizing data primarily by plattoform and secondarily by time. The bronze layer consists of content and responses. The silver layer includes timestamps and history. The timeline is the gold layer the pipeline builds towards. Everything else is there to calculate or verify it, or to provide system information.
+'Apply data deduplication & type validation, basic metadata', 'Advanced/automated metadata (e.g., profiling, schema evolution)', 'Implement medallion architecture (Bronze-Silver-Gold)', 'Data lineage', 'Performance tuning (e.g., partitioning, z-ordering, etc.)'  
+Deduplication was most cruscially implemented by not treating each instance of a post as a new post, which among other things would require new file downloads. Data lineage and partitioning are both implemented by categorizing data primarily by plattoform and secondarily by time. The bronze layer consists of content and responses. The silver layer includes timestamps and history. The timeline is the gold layer the pipeline builds towards. Everything else is there to calculate or verify it, or to provide system information.
 
 'Basic visualization (plots, dashboard, ...)', 'Record and present pipeline statistics (e.g., number of ingested records, ingestion timing)', 'External visualization or other type of data usage via API/sharing protocols', 'Simple data contract', 'Access the data product through an API', 'Automated testing of schema/data'  
 The data can be accessed through an API, which includes automated testing with data contracts. This API is called by an external visualizer that can draw plots, of various data, including pipeline statistics.
