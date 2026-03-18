@@ -6,25 +6,25 @@ The top level product of this pipeline is a timeseries of 'positivity' across mu
 
 ## 2) Completed tasks  
 In short, this project includes all tasks with the exception of 'Structured logging & error handling'. As per the instructions, completed tasks will be listed here. How these were implemented will be described batchwise in section 6, by which the structure of the project should be clearer. Description of solution with illustrative elements. Data schema description and pipeline description.  
-Repository organization & documentation  
-Overall presentation & language  
-Scope & innovativeness, originality  
-Structured data (batch/manual)  
-Unstructured data (batch/manual)  
-Real-time or automated batch ingestion  
-Implement ETL to clean, transform, and standardize data  
-Apply data deduplication & type validation, basic metadata  
-Advanced/automated metadata (e.g., profiling, schema evolution)  
-Implement medallion architecture (Bronze-Silver-Gold)  
-Data lineage  
-Implement an AI/ML model as part of the data pipeline.  
-Performance tuning (e.g., partitioning, z-ordering, etc.)   
-Basic visualization (plots, dashboard, ...)  
-Record and present pipeline statistics (e.g., number of ingested records, ingestion timing)	   
-External visualization or other type of data usage via API/sharing protocols  
-Simple data contract  
-Access the data product through an API  
-Automated testing of schema/data  
+ 'Repository organization & documentation'  
+ 'Overall presentation & language'  
+ 'Scope & innovativeness, originality'  
+ 'Structured data (batch/manual)'  
+ 'Unstructured data (batch/manual)'  
+ 'Real-time or automated batch ingestion'  
+ 'Implement ETL to clean, transform, and standardize data'  
+ 'Apply data deduplication & type validation, basic metadata'  
+ 'Advanced/automated metadata (e.g., profiling, schema evolution)'  
+ 'Implement medallion architecture (Bronze-Silver-Gold)'  
+ 'Data lineage'  
+ 'Implement an AI/ML model as part of the data pipeline.'  
+ 'Performance tuning (e.g., partitioning, z-ordering, etc.)'   
+ 'Basic visualization (plots, dashboard, ...)'  
+ 'Record and present pipeline statistics (e.g., number of ingested records, ingestion timing)'	   
+ 'External visualization or other type of data usage via API/sharing protocols'  
+ 'Simple data contract'  
+ 'Access the data product through an API'  
+ 'Automated testing of schema/data'  
 
 ## 3) Data  
 Any reference to time or in this section referes to the epoch seconds at which the sampling began.  
