@@ -81,6 +81,7 @@ First, a call is made to the plattform, which provides information about the mos
 
 Once this is done for each post in the response. The average positivity weighted by impressions is calculated. Posts with no text elements are ignored. When this has been done for all platforms, rows are appended to timeline and ingests. From there, the data is accessible through the API, which also performs automatic testing if the data is a table.
 <img width="2016" height="338" alt="Pipeline" src="https://github.com/user-attachments/assets/c6e3b8c9-56f9-421d-92eb-9e187e9dac22" />
+<img width="1245" height="252" alt="Pipeline2" src="https://github.com/user-attachments/assets/f087c96d-b4b5-4bc7-b8b2-97ce71b05261" />
 
 ## 7) Details of task implementation  
 
