@@ -72,6 +72,7 @@ First, a call is made to the plattform, which provides information about the mos
 3po.main.{platform}_positivity. If the ID is present in the table, this is an instance of a previously handeled post. If so, only the values needed to calculate impressions are collected from the platform, and the positivity is collected from the file. Rows are then appended to the timestamp and history of the post. If there is no ID match, it is a new post, and the positivity is calculated by using Vader sentiment analysis on the user facing text elements of the post. Also, the contents of the post are downloaded and stored in 3po.c{platform}.{ID}. Appends are then performed as if the post was reoccuring.
 
 Once this is done for each post in the response. The average positivity weighted by impressions is calculated. Posts with no text elements are ignored. When this has been done for all platforms, rows are appended to timeline and ingests. From there, the data is accessible through the API, which also performs automatic testing if the data is a table.
+<img width="2016" height="338" alt="Pipeline" src="https://github.com/user-attachments/assets/c6e3b8c9-56f9-421d-92eb-9e187e9dac22" />
 
 ## 6) Details of task implementation  
 
