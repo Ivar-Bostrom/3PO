@@ -2,35 +2,29 @@
 Parallel Post Positivity Observer
 
 ## 1) Introduction  
-The top level prouct of this pipeline is a timeseries of 'positivity' across multiple platforms; by running sentiment analysis
-on the most popular posts, and weighting them based on approximation of impressions. The system also stores several other tables and files, 
-that were part of the pipeline, or otherwise provide more clarity about the posts or the system. These will be listed in section 3.
-The code is currently set up to track the social media platforms Bluesky and Mastodon, but the system is made to be expandable, only
-requireing changes in the Ingestion notebook [link]. Early versions tracked Redit as well, but the endpoint was not open to Databricks.
+The top level product of this pipeline is a timeseries of 'positivity' across multiple platforms; by running sentiment analysis on the most popular posts, and weighting them based on approximation of impressions. The system also stores several other tables and files, that were part of the pipeline, or otherwise provide more clarity about the posts or the system. These will be listed in section 3. The code is currently set up to track the social media platforms Bluesky and Mastodon, but the system is made to be expandable, only requiring changes in the Ingestion notebook [link]. Early versions tracked Reddit as well, but the endpoint was not open to Databricks.
 
 ## 2) Completed tasks  
-In short, this project includes all tasks with the exception of 'Structured logging & error handling'. As per the instructions, completed tasks
-will be listed here. How these were implemented will be described batchwise in section 6, by which the structure of the project should be clearer.  
-  Description of solution with illustrative elements. Data schema description and pipeline description.  
-  Repository organization & documentation  
-  Overall presentation & language  
-  Scope & innovativeness, originality  
-  Structured data (batch/manual)  
-  Unstructured data (batch/manual)  
-  Real-time or automated batch ingestion  
-  Implement ETL to clean, transform, and standardize data  
-  Apply data deduplication & type validation, basic metadata  
-  Advanced/automated metadata (e.g., profiling, schema evolution)  
-  Implement medallion architecture (Bronze-Silver-Gold)  
-  Data lineage  
-  Implement an AI/ML model as part of the data pipeline.  
-  Performance tuning (e.g., partitioning, z-ordering, etc.)   
-  Basic visualization (plots, dashboard, ...)  
-  Record and present pipeline statistics (e.g., number of ingested records, ingestion timing)	   
-  External visualization or other type of data usage via API/sharing protocols  
-  Simple data contract  
-  Access the data product through an API  
-  Automated testing of schema/data  
+In short, this project includes all tasks with the exception of 'Structured logging & error handling'. As per the instructions, completed tasks will be listed here. How these were implemented will be described batchwise in section 6, by which the structure of the project should be clearer. Description of solution with illustrative elements. Data schema description and pipeline description.  
+Repository organization & documentation  
+Overall presentation & language  
+Scope & innovativeness, originality  
+Structured data (batch/manual)  
+Unstructured data (batch/manual)  
+Real-time or automated batch ingestion  
+Implement ETL to clean, transform, and standardize data  
+Apply data deduplication & type validation, basic metadata  
+Advanced/automated metadata (e.g., profiling, schema evolution)  
+Implement medallion architecture (Bronze-Silver-Gold)  
+Data lineage  
+Implement an AI/ML model as part of the data pipeline.  
+Performance tuning (e.g., partitioning, z-ordering, etc.)   
+Basic visualization (plots, dashboard, ...)  
+Record and present pipeline statistics (e.g., number of ingested records, ingestion timing)	   
+External visualization or other type of data usage via API/sharing protocols  
+Simple data contract  
+Access the data product through an API  
+Automated testing of schema/data  
 
 ## 3) Data  
 Any reference to time or in this section referes to the epoch seconds at which the sampling began.  
