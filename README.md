@@ -86,7 +86,7 @@ The responses are structured, if not to the standards of a table. If a platform 
 Sample() is an example of batch ingestion, and ingest() is thus an example of automated batch ingestion.
 
 'Implement ETL to clean, transform, and standardize data', 'Implement an AI/ML model as part of the data pipeline.'  
-Various variables are reconciled into impressions. AI is implemented in the form os sentiment analysis.
+Various variables are reconciled into impressions. AI is implemented in the form of sentiment analysis.
 
 'Apply data deduplication & type validation, basic metadata', 'Advanced/automated metadata (e.g., profiling, schema evolution)', 'Implement medallion architecture (Bronze-Silver-Gold)', 'Data lineage', 'Performance tuning (e.g., partitioning, z-ordering, etc.)'  
 Deduplication was most cruscially implemented by not treating each instance of a post as a new post, which among other things would require new file downloads. Data lineage and partitioning are both implemented by categorizing data primarily by plattoform and secondarily by time. The bronze layer consists of content and responses. The silver layer includes timestamps and history. The timeline is the gold layer the pipeline builds towards. Everything else is there to calculate or verify it, or to provide system information.
