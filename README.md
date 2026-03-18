@@ -45,7 +45,7 @@ Impressions refer to an approximated number. Not an exact value, unless the plat
   3po.t{platform}.t{time}, for each platform and sample: T is short for timestamp. Includes the ID, impressions, and positivity of each post sampled from that platform at that time.  
 
 3.2) Volumes  
-  3po.main.timeline: containst yaml files called: timeline, positivity, ingests, history, and timestamp, each of which provides the data contract for one row of section 3.1, listed in corresponding order.  
+  3po.main.timeline: containst yaml files called: timeline, positivity, ingests, history, and timestamp, each of which provides the data contract for the corresponding tables. 
   3po.c{platform}.{ID} for each post: C is short for content. Includes the content of each post. Text content is stored as 0.txt. Additional files are numerically named with various file formats.  
   3po.responses.{platform} for each platform: contains json files named after time. These represent the original response from which data is gathered.  
 
