@@ -45,7 +45,7 @@ Impressions refer to an approximated number. Not an exact value, unless the plat
   3po.t{platform}.t{time}, for each platform and sample: T is short for timestamp. Includes the ID, impressions, and positivity of each post sampled from that platform at that time.  
 
 3.2) Volumes  
-  3po.main.timeline: containst yaml files called: timeline, positivity, ingests, history, and timestamp, each of which provides the data contract for the corresponding tables. 
+  3po.main.timeline: containst yaml files called: timeline, positivity, ingests, history, and timestamp, each of which provides the data contract for the corresponding tables.  
   3po.c{platform}.{ID} for each post: C is short for content. Includes the content of each post. Text content is stored as 0.txt. Additional files are numerically named with various file formats.  
   3po.responses.{platform} for each platform: contains json files named after time. These represent the original response from which data is gathered.  
 
@@ -54,7 +54,7 @@ Impressions refer to an approximated number. Not an exact value, unless the plat
 4.1) Notebooks
 Setup: Prepares the locations and files that aren't time or platform specific. To use, simply run all cells in order.
   
-Ingestion: Responsible for collecting, transforming, and storing data. First three cells require no edits. Simply run in order. Cells four and five handle specific platforms. If another platform is to be added, a new cell needs to be added following the same structure. Cell 6 defines the user called functions. It requires some edits if a new plattform is added. The locations that need change are commented and intuitive. The last cell is for calling functions. Sample(time,limit) is used to take a sample. Time determines the epoch second the sample will be listed under, and limit determines the number of posts sampled from each platform. Ingest(samples,size,period) runs the sample() function a number of times equal to samples. time is set to the current time, and limit is equivalent to size. Period determines the lenght of time between samples starting. If a sample would start before the previous one has ended, it will instead start imediately after. If samples is negative, the sampling will continue unless interrupted.
+Ingestion: Responsible for collecting, transforming, and storing data. Cells four and five handle specific platforms. If another platform is to be added, a new cell needs to be added following the same structure. Cell 6 would also require some edits to accomodate more plattforms. The locations that need change are commented and intuitive. The last cell is for calling functions. Sample(time,limit) is used to take a sample. Time determines the epoch second the sample will be listed under, and limit determines the number of posts sampled from each platform. Ingest(samples,size,period) runs the sample() function a number of times equal to samples. time is set to the current time, and limit is equivalent to size. Period determines the lenght of time between samples starting. If a sample would start before the previous one has ended, it will instead start imediately after. If samples is negative, the sampling will continue unless interrupted.
 
 Reset: The first cell defines functions for clearing certain data. The second cell is for calling those functions. Especially usefull if dealing with low storage quotas.
 
