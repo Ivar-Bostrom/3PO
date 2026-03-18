@@ -35,15 +35,15 @@ Impressions refer to an approximated number. Not an exact value, unless the plat
 
 ### 3.1) Tables  
   3po.main.timeline: This is the main timeseries, and includes time, and the corresponding {platform}_positivity for each platform.  
-  3po.main.{platform}_positivity, for each platform: Include ID and positivity for each post that has been sampled from that platform.  
+  3po.main.{platform}_positivity, for each platform: Includes ID and positivity for each post that has been sampled from that platform.  
   3po.main.ingests: Includes the time, instances of posts sampled, how many of these posts were new, and thus required more processing, and how many files were saved to represent those posts.  
   3po.h{platform}.h{ID}, for each post: H is short for history. Includes every timestamp at which an instance of the post was sampled, and the number of impressions at that time.  
   3po.t{platform}.t{time}, for each platform and sample: T is short for timestamp. Includes the ID, impressions, and positivity of each post sampled from that platform at that time.  
 
 ### 3.2) Volumes  
-  3po.main.timeline: containst yaml files called: timeline, positivity, ingests, history, and timestamp, each of which provides the data contract for the corresponding tables.  
+  3po.main.timeline: Containst yaml files called: timeline, positivity, ingests, history, and timestamp, each of which provides the data contract for the corresponding tables.  
   3po.c{platform}.{ID} for each post: C is short for content. Includes the content of each post. Text content is stored as 0.txt. Additional files are numerically named with various file formats.  
-  3po.responses.{platform} for each platform: contains json files named after time. These represent the original response from which data is gathered.  
+  3po.responses.{platform} for each platform: Contains json files named after time. These represent the original response from which data is gathered.  
 
 ## 4) Code files & user guide
 
@@ -82,7 +82,7 @@ This file is in large part an implementation of this task.
 These tasks are impossible not to implement, although the quality of implementation can vary.
 
 'Structured data (batch/manual)', 'Unstructured data (batch/manual)', 'Real-time or automated batch ingestion'  
-The responses are structured, if not to the standards of a table. If a platform was to send a table, the system could also handle it. The different files are definitely unstructured.
+The responses are structured, if not to the standards of a table. If a platform was to send a table, the system could also handle it. The content files are definitely unstructured.
 Sample() is an example of batch ingestion, and ingest() is thus an example of automated batch ingestion.
 
 'Implement ETL to clean, transform, and standardize data', 'Implement an AI/ML model as part of the data pipeline.'  
