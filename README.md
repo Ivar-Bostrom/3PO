@@ -2,7 +2,7 @@
 Parallel Post Positivity Observer
 
 ## 1) Introduction  
-The top level product of this pipeline is a timeseries of 'positivity' across multiple platforms, etermined by running sentiment analysis on the most popular posts, and weighting them based on approximation of impressions. The system also stores several other tables and files, that were part of the pipeline, or otherwise provide more clarity about the posts or the system. These will be listed in section 4. The code is currently set up to track the social media platforms Bluesky and Mastodon, but the system is made to be expandable, only requiring changes in the Ingestion notebook [link]. Early versions tracked Reddit as well, but the endpoint was not open to Databricks.
+The top level product of this pipeline is a timeseries of 'positivity' across multiple platforms, determined by running sentiment analysis on the most popular posts, and weighting them based on approximation of impressions. The system also stores several other tables and files, that were part of the pipeline, or otherwise provide more clarity about the posts or the system. These will be listed in section 4. The code is currently set up to track the social media platforms Bluesky and Mastodon, but the system is made to be expandable, only requiring changes in the Ingestion notebook [link]. Early versions tracked Reddit as well, but the endpoint was not open to Databricks.
 
 ## 2) Completed tasks  
 In short, this project includes all tasks with the exception of 'Structured logging & error handling'. As per the instructions, completed tasks will be listed here. How these were implemented will be described batchwise in section 6, by which point the structure of the project should be clearer. 
